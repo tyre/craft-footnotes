@@ -16,7 +16,7 @@ RedactorPlugins.footnotes = function() {
           + '<section>'
             + '<button id="redactor-modal-button-action">Insert</button>'
             + '<button id="redactor-modal-button-cancel">Cancel</button>'
-          + '</section>
+          + '</section>'
         + '</div>';
     },
     show: function() {
