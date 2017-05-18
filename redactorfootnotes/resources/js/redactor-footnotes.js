@@ -3,7 +3,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 RedactorPlugins.footnotes = function() {
   return {
     init: function() {
-      var button = this.button.add('footnotes', 'add<sup>src</sup>');
+      var button = this.button.add('footnotes', 'foot<sup>note</sup>');
       this.button.addCallback(button, this.footnotes.show);
     },
     getTemplate: function() {
