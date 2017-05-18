@@ -2,11 +2,11 @@
 
 namespace Craft;
 
-class RedactorInlineQuotePlugin extends BasePlugin
+class RedactorFootnotesPlugin extends BasePlugin
 {
     function getName()
     {
-         return 'Redactor Inline Quote';
+         return 'Redactor Footnotes';
     }
 
     function getVersion()
@@ -21,7 +21,7 @@ class RedactorInlineQuotePlugin extends BasePlugin
 
     public function getPluginUrl()
     {
-        return 'https://github.com/tyre/redactorinlinequote';
+        return 'https://github.com/tyre/redactorfootnotes';
     }
 
     public function getDocumentationUrl()
@@ -35,21 +35,12 @@ class RedactorInlineQuotePlugin extends BasePlugin
         return 'en';
     }
 
-    // protected function defineSettings()
-    // {
-    //     return array(
-    //         'insertquotes' => array(
-    //             AttributeType::Bool, 'default' => true
-    //         )
-    //     );
-    // }
-
     public function init()
     {
         parent::init();
         if (craft()->request->isCpRequest())
         {
-            craft()->templates->includeJsResource('redactorinlinequote/js/redactor-inline-quote.js');
+            craft()->templates->includeJsResource('redactorfootnotes/js/redactor-footnotes.js');
         }
     }
 }

@@ -1,2 +1,2 @@
-# redactor-inline-quote
-Craft Plugin to add inline quote functionality
+# redactor-footnotes
+Craft Plugin to add footnote functionality
