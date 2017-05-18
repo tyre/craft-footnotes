@@ -2,11 +2,11 @@
 
 namespace Craft;
 
-class RedactorFootnotesPlugin extends BasePlugin
+class CraftFootnotesPlugin extends BasePlugin
 {
     function getName()
     {
-         return 'Redactor Footnotes';
+         return 'Craft Footnotes';
     }
 
     function getVersion()
@@ -26,7 +26,7 @@ class RedactorFootnotesPlugin extends BasePlugin
 
     public function getPluginUrl()
     {
-        return 'https://github.com/tyre/redactorfootnotes';
+        return 'https://github.com/tyre/craftfootnotes';
     }
 
     public function getDocumentationUrl()
@@ -45,7 +45,7 @@ class RedactorFootnotesPlugin extends BasePlugin
         parent::init();
         if (craft()->request->isCpRequest())
         {
-            craft()->templates->includeJsResource('redactorfootnotes/js/redactor-footnotes.js');
+            craft()->templates->includeJsResource('craftfootnotes/js/redactor-footnotes.js');
         }
     }
 }
