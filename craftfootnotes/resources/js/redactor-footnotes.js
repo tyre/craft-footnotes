@@ -4,10 +4,7 @@ RedactorPlugins.footnotes = function() {
   return {
     init: function() {
       var button = this.button.add('footnotes', 'foot<sup>note</sup>');
-      this.button.addDropdown(button, {
-        point1: { title: "Add reference", func: this.footnotes.addReference },
-        point2: { title: "Add text", func: this.footnotes.addText }
-      });
+      this.button.addDropdown(button, this.footnotes.addReference);
     },
     getTemplate: function() {
       return String()
@@ -45,38 +42,6 @@ RedactorPlugins.footnotes = function() {
         '">',
         '</a></sup>'
       ].join(footnotesReferenceNumber);
-    },
-    addText: function() {
-      this.modal.addTemplate('footnotes', this.footnotes.getTemplate());
-      this.modal.load('footnotes', 'Add a footnote', 400);
-
-      var button = this.modal.getActionButton();
-      button.on('click', this.footnotes.insertText);
-
-      this.modal.show();
-
-      $('#footnotes-reference-number').focus();
-    },
-    insertText: function() {
-      var footnotesTextNumber = $('#footnotes-reference-number').val();
-      this.modal.close();
-      this.insert.html(this.footnotes.textHtml(footnotesTextNumber));
-    },
-    textHtml: function(footnotesReferenceNumber) {
-      var footnoteText = 'Footnote Here!';
-      if (this.selection.is()) {
-        footnoteText = this.selection.html();
-      }
-      return new String()
-        + '<div id="footnote-text-'
-        + footnotesReferenceNumber
-        + '" class="footnote-text"><span class="footnote-number">'
-        + footnotesReferenceNumber
-        + '. </span>'
-        + footnoteText
-        + '<a href="#footnote-reference-'
-        + footnotesReferenceNumber
-        + '"> ↩</a></div>';
-    },
+    }
   };
 };

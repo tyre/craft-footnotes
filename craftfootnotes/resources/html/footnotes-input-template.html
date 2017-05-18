@@ -1,0 +1,7 @@
+<ul class="footnotes-input">
+  {%for footnote in value %}
+    <li id="footnote-text-{{loop.index}}" class="footnote-text">
+      {{footnote.text}}<a href="#footnote-reference-{{loop.index}}">↩</a>
+    </li>
+  {% %}
+</ul>
