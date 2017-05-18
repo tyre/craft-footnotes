@@ -37,11 +37,10 @@ RedactorPlugins.footnotes = function() {
     },
     footnotesHtml: function(footnotesReferenceNumber) {
       return [
-        String(),
-        "<sup id=\"footnote-reference-",
-        "\" class=\"footnote-reference\"><a href=\"#footnote-text-",
-        "\">",
-        "</a></sup>\""
+        '<sup id="footnote-reference-',
+        '" class="footnote-reference"><a href="#footnote-text-',
+        '">',
+        '</a></sup>'
       ].join(footnotesReferenceNumber);
     }
   };
