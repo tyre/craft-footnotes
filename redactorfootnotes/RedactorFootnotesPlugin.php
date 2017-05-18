@@ -19,6 +19,11 @@ class RedactorFootnotesPlugin extends BasePlugin
         return 'Chris Maddox';
     }
 
+    function getDeveloperURL()
+    {
+        return 'https://github.com/tyre';
+    }
+
     public function getPluginUrl()
     {
         return 'https://github.com/tyre/redactorfootnotes';
