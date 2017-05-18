@@ -7,7 +7,7 @@ RedactorPlugins.footnotes = function() {
       this.button.addDropdown(button, {
         point1: { title: "Add reference", func: this.footnotes.addReference },
         point2: { title: "Add text", func: this.footnotes.addText }
-      );
+      });
     },
     getTemplate: function() {
       return String()
@@ -63,11 +63,20 @@ RedactorPlugins.footnotes = function() {
       this.insert.html(this.footnotes.textHtml(footnotesTextNumber));
     },
     textHtml: function(footnotesReferenceNumber) {
-      return [
-        '<li id="footnote-text-',
-        '" class="footnote-text">Footnote text<a href="#ftn-1',
-        '"> ↩</a>'
-      ].join(footnotesReferenceNumber);
+      var footnoteText = 'Footnote Here!';
+      if (this.selection.is()) {
+        footnoteText = this.selection.html();
+      }
+      return new String()
+        + '<div id="footnote-text-'
+        + footnotesReferenceNumber
+        + '" class="footnote-text"><span class="footnote-number">'
+        + footnotesReferenceNumber
+        + '. </span>'
+        + footnoteText
+        + '<a href="#footnote-reference-'
+        + footnotesReferenceNumber
+        + '"> ↩</a></div>';
     },
   };
 };
